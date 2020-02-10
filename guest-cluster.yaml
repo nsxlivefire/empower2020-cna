@@ -1,8 +1,8 @@
 apiVersion: gcm.vmware.com/v1alpha1
 kind: ManagedCluster
 metadata:
-  name: cluster-01
-  namespace: demo-01
+  name: cluster-dev
+  namespace: livefire
 spec:
   topology:
     controlPlane:
@@ -20,6 +20,6 @@ spec:
       cni:
         name: calico
       services:
-        cidrBlocks: ["10.51.100.0/16"]
+        cidrBlocks: ["10.51.0.0/16"]
       pods:
-        cidrBlocks: ["10.0.2.0/16"]
+        cidrBlocks: ["10.52.0.0/16"]
