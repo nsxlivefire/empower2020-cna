@@ -58,18 +58,20 @@ spec:
     app: yelb-ui
     tier: frontend
 ---
-apiVersion: extensions/v1beta1
-kind: Ingress
+apiVersion: v1
+kind: Service
 metadata:
-  name: yelb-ui-ingress
+  name: yelb-lb-service
 spec:
-  rules:
-    - host: yelb.livefire.corp.local
-      http:
-        paths:
-        - backend:
-            serviceName: yelb-ui
-            servicePort: 80
+  selector:
+    app: yelb-ui
+    tier: frontend
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+  type: LoadBalancer
+
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment

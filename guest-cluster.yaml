@@ -1,7 +1,7 @@
 apiVersion: gcm.vmware.com/v1alpha1
 kind: ManagedCluster
 metadata:
-  name: cluster-dev
+  name: cluster-test
 spec:
   topology:
     controlPlane:
@@ -19,6 +19,6 @@ spec:
       cni:
         name: calico
       services:
-        cidrBlocks: ["10.51.0.0/16"]
+        cidrBlocks: ["10.53.0.0/16"]
       pods:
-        cidrBlocks: ["10.52.0.0/16"]
+        cidrBlocks: ["10.54.0.0/16"]
