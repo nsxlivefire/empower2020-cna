@@ -13,7 +13,7 @@ spec:
       class: guaranteed-xsmall # vmclass to be used for workers(s)
       storageClass: wcp-storage-policy
   distribution:
-    version: v1.16.8
+    version: v1.15.5+vmware.1-tkg.1.85123d8
   settings:
     network:
       cni:
